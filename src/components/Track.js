@@ -1,5 +1,4 @@
 import React, { memo } from 'react'
-import useSound from '../hooks/useSound'
 import Note from './Note'
 import './Track.css'
 
@@ -9,9 +8,7 @@ const Track = ({
     title,
     noteCount,
     onNotes,
-    soundFilePath,
 }) => {
-    // const [play] = useSound(soundFilePath)
     
     const notes = [...Array(noteCount)].map((el, i) => {
         const isNoteOn = onNotes.indexOf(i) !== -1

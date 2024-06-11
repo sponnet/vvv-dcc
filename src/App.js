@@ -116,7 +116,7 @@ function App() {
             <main className="app">
                 <header className="app_header">
                     <h1 className="app_title">
-                        <img src="logo4.png" width="150em"></img>
+                        <img alt="logo" src="logo4.png" width="150em"></img>
                         <Relay/>
                     </h1>
                     <ToolBar {...toolBarProps} />

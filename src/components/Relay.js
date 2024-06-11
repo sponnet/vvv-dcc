@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, memo } from 'react'
+import React, { useEffect, memo } from 'react'
 import classNames from 'classnames'
 import { useRelay } from '../hooks/useRelay'
 import './Relay.css'
@@ -23,7 +23,7 @@ const RelayDot = ({
 
 const Relay = () => {
 
-    const { deviceInfo, openDevice, toggle, closeDevice, relayStates } = useRelay()
+    const { deviceInfo, openDevice, relayStates } = useRelay()
     useEffect(() => {
         console.log("RELAYSTATES", relayStates)
     }, [relayStates])

@@ -23,7 +23,7 @@ const Note = ({
             toggle(isNoteOn, trackID, 1000)
         }
 
-    }, [isNoteOn, isNoteOnCurrentStep])
+    }, [isNoteOn, toggle, trackID, isNoteOnCurrentStep])
 
     const noteClicked = e => {
         e.target.classList.toggle('on')
