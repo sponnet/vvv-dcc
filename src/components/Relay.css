@@ -1,0 +1,32 @@
+.relay {
+    flex: 0 0 var(--relay-width);
+    height: var(--relay-height);
+    width: var(--relay-width);
+    border: var(--relay-border-size) solid var(--color-black);
+    box-sizing: border-box;
+    margin-top: var(--relay-margin-vert);
+    margin-bottom: var(--relay-margin-vert);
+    margin-left: var(--relay-margin-horz);
+    margin-right: var(--relay-margin-horz);
+    cursor: pointer;
+    text-align: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 1.5em;
+}
+
+.relay.on {
+    background-color: var(--color-highlight);
+    transition: background-color 120ms 0 ease;
+    color: black;
+}
+
+.relaycontainer {
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+    /* Horizontally center */
+    align-items: center;
+    /* justify-content: space-between; */
+    /* Adjust as needed: space-between, space-around, center, etc. */
+}
