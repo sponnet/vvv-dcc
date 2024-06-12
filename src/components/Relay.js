@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from 'react'
+import React, { memo } from 'react'
 import classNames from 'classnames'
 import { useRelay } from '../hooks/useRelay'
 import './Relay.css'

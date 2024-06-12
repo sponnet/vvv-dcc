@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, memo, useCallback } from 'react'
+import React, { useContext, useEffect, memo } from 'react'
 import classNames from 'classnames'
 import { Context } from '../hooks/useStore'
 import './Note.css'
@@ -23,7 +23,7 @@ const Note = ({
         if (isNoteOnCurrentStep) {
             toggle(isNoteOn, trackID, relayPulseLength)
         }
-    }, [isNoteOn, toggle, trackID, isNoteOnCurrentStep])
+    }, [isNoteOn, toggle, trackID, relayPulseLength, isNoteOnCurrentStep])
 
     const noteClicked = e => {
         e.target.classList.toggle('on')
