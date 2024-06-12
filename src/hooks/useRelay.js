@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useCallback } from 'react'
 
 let device
 let relayTimers = []
@@ -75,22 +75,15 @@ const RelayProvider = ({ children }) => {
     }
 
 
-    const toggle = async (on, index, duration) => {
-        // console.log(`toggle ${on ? "on" : "off"} relay ${index}`)
-        // console.log(`--> stat states ${relayStates.map((s) => { return s })}`)
-        // if (relayStates[index] !== on) {
-        // console.log(`states ${relayStates.map((s)=>{ return s ? "1" : "0"})}`)
+    const toggle = useCallback((on, index, duration) => {
         console.log(`switching ${on ? "on" : "off"} relay ${index}`)
 
         setRelayStates(prevStates => {
-            // console.log(`--> p states ${prevStates.map((s) => { return s })}`)
             const n = prevStates.map((item, i) => (i === index ? on : item))
-            // console.log(`--> n states ${n.map((s) => { return s })}`)
             return n
         })
-        // }
 
-        await switchRelay(on ? 0xFF : 0xFD, index + 1)
+        switchRelay(on ? 0xFF : 0xFD, index + 1)
 
         if (on && duration) {
             const newRT = [...relayTimers]
@@ -102,7 +95,7 @@ const RelayProvider = ({ children }) => {
 
         // setRelayStates([...relayStates_])
 
-    }
+    }, [])
 
 
     return (

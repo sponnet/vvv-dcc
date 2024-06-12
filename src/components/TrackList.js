@@ -1,13 +1,11 @@
 import React, { useContext, memo } from 'react'
 import { Context } from '../hooks/useStore'
-import { soundFiles } from '../constants/config'
 import Track from './Track'
 
 const TrackList = ({ currentStepID }) => {
     const { sequence: { trackList, noteCount } } = useContext(Context)
     const content = trackList.map((track, trackID) => {
-        const { title, onNotes, soundFile } = track
-        const soundFilePath = soundFiles[soundFile]
+        const { title, onNotes,relayPulseLength } = track
 
         return (
             <Track
@@ -17,7 +15,7 @@ const TrackList = ({ currentStepID }) => {
                 title={title}
                 noteCount={noteCount}
                 onNotes={onNotes}
-                soundFilePath={soundFilePath}
+                relayPulseLength={relayPulseLength}
             />
         )
     })

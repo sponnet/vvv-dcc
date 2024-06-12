@@ -8,6 +8,7 @@ const Track = ({
     title,
     noteCount,
     onNotes,
+    relayPulseLength
 }) => {
     
     const notes = [...Array(noteCount)].map((el, i) => {
@@ -22,6 +23,7 @@ const Track = ({
                 stepID={stepID}
                 isNoteOn={isNoteOn}
                 isNoteOnCurrentStep={isNoteOnCurrentStep}
+                relayPulseLength={relayPulseLength}
             />
         )
     })

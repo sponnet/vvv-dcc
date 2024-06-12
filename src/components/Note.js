@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, memo } from 'react'
+import React, { useContext, useEffect, memo, useCallback } from 'react'
 import classNames from 'classnames'
 import { Context } from '../hooks/useStore'
 import './Note.css'
@@ -9,6 +9,7 @@ const Note = ({
     stepID,
     isNoteOn,
     isNoteOnCurrentStep,
+    relayPulseLength
 }) => {
 
     const { toggleNote } = useContext(Context)
@@ -20,9 +21,8 @@ const Note = ({
 
     useEffect(() => {
         if (isNoteOnCurrentStep) {
-            toggle(isNoteOn, trackID, 1000)
+            toggle(isNoteOn, trackID, relayPulseLength)
         }
-
     }, [isNoteOn, toggle, trackID, isNoteOnCurrentStep])
 
     const noteClicked = e => {

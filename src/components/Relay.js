@@ -24,9 +24,9 @@ const RelayDot = ({
 const Relay = () => {
 
     const { deviceInfo, openDevice, relayStates } = useRelay()
-    useEffect(() => {
-        console.log("RELAYSTATES", relayStates)
-    }, [relayStates])
+    // useEffect(() => {
+    //     console.log("RELAYSTATES", relayStates)
+    // }, [relayStates])
 
     return (
         <div style={{ height: '140px', width: '80%', border: '1px solid black', padding: '0.5rem', fontSize: 'var(--base-font-size)' }}>
